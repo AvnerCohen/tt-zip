@@ -41,7 +41,7 @@ def process_timestamps(timestamps):
     ranges = [(t, t + (EXTRA_SECONDS * 2)) for t in adjusted_timestamps]
     merged_ranges = merge_overlapping_ranges(ranges)
 
-    return [f"{start}-{end}" for start, end in merged_ranges]
+    return [f"{int(start)}-{int(end)}" for start, end in merged_ranges]
 
 
 if __name__ == "__main__":
@@ -50,3 +50,5 @@ if __name__ == "__main__":
         sys.exit(1)
     video_file = sys.argv[1]
     ball_hit_times = detect_ball_hits(f"{video_file}.wav")
+    for time_range in process_timestamps(ball_hit_times):
+        print(time_range)

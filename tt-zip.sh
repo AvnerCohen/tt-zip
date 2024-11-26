@@ -36,10 +36,10 @@ filter_complex+="concat=n=${#time_ranges[@]}:v=1:a=1[outv][outa]"
 
 echo "🏓 - Generating zipped video."
 
-ffmpeg -loglevel quiet -y -i "$input_video" \
+ffmpeg -i "$input_video" \
   -filter_complex "$filter_complex" \
   -map "[outv]" -map "[outa]" \
-  -c:v libx264 -crf 18 -c:a aac -b:a 128k "$output_video" > /dev/null 2>&1
+  -c:v libx264 -crf 18 -c:a aac -b:a 128k "$output_video"
 
 echo "🏓 - Clean up."
 rm -rf "${input_video}.wav"
