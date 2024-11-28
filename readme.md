@@ -4,6 +4,17 @@ A utility designed to review MP4 videos of Table Tenis games and reduce video si
 
 This is for educational purposes only and meant to simply reduce analysis time.
 
+It's important to understand that the results are not perfect given the simplicty of the solutions, but provides a good starting point with focus on "what really mattered".
+
+## Example of the Results
+
+Random original video: https://www.youtube.com/watch?v=8CIrbiW6lRY a *13:29* minutes video.
+
+The resulting video is only *6:18* minutes, and can be seen here:
+[![Zipped](./game.png)](./zipped_LiVsAustin.mp4)
+
+
+
 ## Process
 
 1. Extract Audio from Video into wav, using SOX
