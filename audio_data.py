@@ -2,7 +2,7 @@ import librosa
 import librosa.display
 import matplotlib.pyplot as plt
 
-audio_file = 'double.wav'
+audio_file = 'LiVsAustin.mp4'
 y, sr = librosa.load(audio_file)
 
 spectrogram = librosa.stft(y)

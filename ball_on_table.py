@@ -37,7 +37,10 @@ def merge_overlapping_ranges(ranges):
 
 
 def process_timestamps(timestamps):
-    adjusted_timestamps = [math.floor(t - EXTRA_SECONDS) for t in timestamps]
+    adjusted_timestamps = []
+    for t in timestamps:
+        if t > EXTRA_SECONDS:
+            adjusted_timestamps.append(math.floor(t - EXTRA_SECONDS))
     ranges = [(t, t + (EXTRA_SECONDS * 2)) for t in adjusted_timestamps]
     merged_ranges = merge_overlapping_ranges(ranges)
 
